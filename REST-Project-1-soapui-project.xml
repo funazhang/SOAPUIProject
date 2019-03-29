@@ -1108,7 +1108,82 @@ testRunner.testCase.testSuite.project.getTestSuiteByName('TestSuite1').getTestCa
 
 log.info ("   >>> " + testRunner.testCase.getSetupScript())
 
-log.info ("   >>> " + testRunner.testCase.getTearDownScript())</script></con:config></con:testStep><con:setupScript>log.info "Setup for Test1"</con:setupScript><con:tearDownScript>log.info "TearDown for Test1"</con:tearDownScript><con:properties/></con:testCase><con:testCase id="18b9367c-7fa5-4e76-9e38-4f2d189a3091" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Asertions" searchProperties="true"><con:settings/><con:testStep type="request" id="c2baac9d-bd76-4199-95e8-1520268cd699" name="CountryCurrency"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CountryInfoServiceSoapBinding</con:interface><con:operation>CountryCurrency</con:operation><con:request name="CountryCurrency" id="bf55afbd-b6a5-4f7e-b849-156a2117f095"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.oorsprong.org/websamples.countryinfo">
+log.info ("   >>> " + testRunner.testCase.getTearDownScript())</script></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script" id="9cf3ba5e-1a37-4703-85df-5d61cdc09cbc"><con:settings/><con:config><script>log.info "Hello World.."
+
+def name=context.expand ('${#Project#Name}')
+
+log.info ("Property name is: "+name)
+
+name=context.expand ('${#TestSuite#Name}')
+
+log.info ("Property name is: "+name)
+
+
+//name=context.expand ('${#System#User.Home}')
+
+//log.info ("System Property name is: "+name)
+
+
+name=context.expand ('${#Global#Name}')
+
+log.info ("Global Property name is: "+name)
+</script></con:config></con:testStep><con:testStep type="groovy" name="SetGetProperties" id="6949300b-af63-4bf6-b91a-4e2b797fc78e"><con:settings/><con:config><script>//loop through properties
+
+testRunner.testCase.properties.each{
+	
+	key,vale ->
+
+	log.info (testRunner.testCase.getPropertyValue(key))
+	
+	}
+
+
+/*********************Set Properties********************/
+
+
+//Project
+testRunner.testCase.testSuite.project.setPropertyValue ("Name", "I am in Project")
+testRunner.testCase.testSuite.project.addProperty ("DOB")
+
+testRunner.testCase.testSuite.project.removeProperty ("Name")
+
+//TestSuite
+testRunner.testCase.testSuite.setPropertyValue ("Name", "I am in TestSuite")
+
+
+//TestCase
+testRunner.testCase.setPropertyValue ("Name", "I am in TestCase")
+
+
+//TestStep
+testRunner.testCase.getTestStepByName("GetCountryByName").setPropertyValue ("Name", "I am in TestStep")
+
+
+//Global
+com.eviware.soapui.SoapUI.globalProperties.setPropertyValue( "Name", "I am in Global" )
+
+/*********************Get Properties********************/
+
+//Project
+def projectPro = testRunner.testCase.testSuite.project.getPropertyValue ("Name")
+log.info ("Project Property = " + projectPro)
+
+//TestSuite
+def testSuitePro = testRunner.testCase.testSuite.getPropertyValue ("Name")
+log.info ("TestSuite Property = " + testSuitePro)
+
+//TestCase
+def testCasePro = testRunner.testCase.getPropertyValue ("Name")
+log.info ("Test Case Property = " + testCasePro)
+
+//TestStep
+def testStepPro = testRunner.testCase.getTestStepByName("GetCountryByName").getPropertyValue ("Name")
+log.info ("Test Step Property = " + testStepPro)
+
+//Global
+def globalProperty = com.eviware.soapui.SoapUI.globalProperties.getPropertyValue( "Name" )
+log.info ("Global Property = " + globalProperty)
+</script></con:config></con:testStep><con:setupScript>log.info "Setup for Test1"</con:setupScript><con:tearDownScript>log.info "TearDown for Test1"</con:tearDownScript><con:properties><con:property><con:name>Name</con:name><con:value>I am in TestCase</con:value></con:property></con:properties></con:testCase><con:testCase id="18b9367c-7fa5-4e76-9e38-4f2d189a3091" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Asertions" searchProperties="true"><con:settings/><con:testStep type="request" id="c2baac9d-bd76-4199-95e8-1520268cd699" name="CountryCurrency"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CountryInfoServiceSoapBinding</con:interface><con:operation>CountryCurrency</con:operation><con:request name="CountryCurrency" id="bf55afbd-b6a5-4f7e-b849-156a2117f095"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservices.oorsprong.org/websamples.countryinfo/CountryInfoService.wso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.oorsprong.org/websamples.countryinfo">
    <soapenv:Header/>
    <soapenv:Body>
       <web:CountryCurrency>
@@ -1158,7 +1233,154 @@ log.info testStepName
 
 //to store the response as XML string
 xmlHold = messageExchange.responseContentAsXml.toString()
-</scriptText></con:configuration></con:assertion><con:assertion type="XPath Match" id="2b446619-1e33-416c-811e-11f4965d3ae1" name="XPath Match"><con:configuration/></con:assertion><con:assertion type="JsonPath RegEx Match" id="b21ab026-d6a1-4cba-8cf8-623c0ec1cd6c" name="JsonPath RegEx Match"><con:configuration><path>[0].region</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments><regEx>Asia</regEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="CountryName" value="hong kong" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>CountryName</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/><con:setupScript>log.info ("   >>>Setup Script setting in TestSuite1 Runs before TestSuite1")</con:setupScript><con:tearDownScript>log.info ("   >>>TearDown Script setting in TestSuite1 Runs after TestSuite1")</con:tearDownScript></con:testSuite><con:testSuite id="492a7822-41c2-4663-bcf3-484a17ab1a27" name="TestSuite2"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:properties/></con:testSuite><con:properties/><con:afterLoadScript>def su = new File("Setup.txt").text
+</scriptText></con:configuration></con:assertion><con:assertion type="XPath Match" id="2b446619-1e33-416c-811e-11f4965d3ae1" name="XPath Match"><con:configuration/></con:assertion><con:assertion type="JsonPath RegEx Match" id="b21ab026-d6a1-4cba-8cf8-623c0ec1cd6c" name="JsonPath RegEx Match"><con:configuration><path>[0].region</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments><regEx>Asia</regEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="CountryName" value="hong kong" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>CountryName</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="dccd0dc8-0da3-4301-bad4-27e7ee509fb1" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="PropertyTransferDemo" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="testCountryAll" id="89f8d5dd-0d6c-456b-badb-0fab5cc07669"><con:settings/><con:config service="https://restcountries.eu" resourcePath="/rest/v2/all" methodName="All 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="testCountryAll" id="0e14b561-dbac-4a1a-88c0-f108b6a6d3ec" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://restcountries.eu</con:endpoint><con:request/><con:originalUri>https://restcountries.eu/rest/v2/all</con:originalUri><con:assertion type="Simple Contains" id="838e1d62-1329-4c2b-8bce-5fc00d343d4b" name="Contains"><con:configuration><token>Africa</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="GetCountryByName" id="8e44d765-40d7-461e-8000-45cc1a5b985c"><con:settings/><con:config service="https://restcountries.eu" resourcePath="/rest/v2/name/{CountryName}" methodName="All 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GetCountryByName" id="4affaf71-2419-493a-a89f-1517299fb911" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://restcountries.eu</con:endpoint><con:request/><con:originalUri>https://restcountries.eu/rest/v2/all</con:originalUri><con:assertion type="Simple Contains" id="8822bf25-7337-4525-a18e-b737fc478914" name="Contains"><con:configuration><token>flag</token><ignoreCase>true</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="CountryName" value="Afghanistan" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>CountryName</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="PropertyTransfer" id="a1cb3f8d-3b43-4df2-92fe-96056bdda38c"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>CountryName</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>testCountryAll</con:sourceStep><con:sourcePath>[0].name</con:sourcePath><con:targetType>CountryName</con:targetType><con:targetStep>GetCountryByName</con:targetStep><con:type>JSONPATH</con:type><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:properties/></con:testCase><con:properties><con:property><con:name>Name</con:name><con:value>I am in TestSuite</con:value></con:property></con:properties><con:setupScript>log.info ("   >>>Setup Script setting in TestSuite1 Runs before TestSuite1")</con:setupScript><con:tearDownScript>log.info ("   >>>TearDown Script setting in TestSuite1 Runs after TestSuite1")</con:tearDownScript></con:testSuite><con:testSuite id="492a7822-41c2-4663-bcf3-484a17ab1a27" name="TestSuite2"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="0593e243-bc86-4a9c-b961-ae1750d3f862" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GroovyScript" searchProperties="true"><con:settings/><con:testStep type="groovy" name="GroovyScript" id="e47415f8-d880-4621-be6c-bde14c0b0bec"><con:settings/><con:config><script>import java.io.*
+
+
+log.info ("    Hello World..")
+
+a=10
+b=20
+c=a+b
+log.info ("a + b = " +c)
+
+/*important:
+ * log
+ * context
+ * testRunner
+ */
+
+log.info testRunner.metaClass.methods*.name.unique().sort()
+
+//testRunner API
+//https://www.soapui.org/apidocs/com/eviware/soapui/model/testsuite/TestRunner.html</script></con:config></con:testStep><con:testStep type="groovy" name="Hello" id="2f2d6eef-883f-4b7e-abcf-4a652d8e67d3"><con:settings/><con:config><script>class Hello{
+
+	def log
+	def context
+	def testRunner
+
+	def Hello(log,context,testRunner){
+		
+		this.log=log
+		this.context=context
+		this.testRunner=testRunner
+		
+		}
+	
+	def sayHello(String name){
+		
+		log.info ("    Saying Hello "+name)
+		
+		}
+		
+	
+	}
+
+	context.setProperty("Hello", new Hello(log,context,testRunner))</script></con:config></con:testStep><con:testStep type="groovy" name="CallHello" id="24c738fb-5a90-4d49-b78c-bdb3c0102877"><con:settings/><con:config><script>def testStep = testRunner.testCase.getTestStepByName("Hello")
+
+testStep.run (testRunner,context)
+
+context.Hello.sayHello("Fiona")</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="856fa46f-69f5-4b2b-b741-d1f570d420b7" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="RunRequest" searchProperties="true"><con:settings/><con:testStep type="groovy" name="RunRequest" id="9d2ad2c4-c359-4516-a1dd-79eb14570721"><con:settings/><con:config><script>/*
+//Groovy - run request from same TestCase
+def status = testRunner.runTestStepByName("GetCountryByName")
+log.info ("  ---- "+status)
+
+def result = status.getStatus().toString();
+log.info ("   ---- "+result)
+
+if (result == "OK"){
+	
+	log.info ("  >> Test Passed")
+	}
+else{
+		
+	log.info ("   >>Test Failed")
+		}
+*/
+
+
+//Groovy - run request from another TestCase or TestSuite
+def project = testRunner.testCase.testSuite.project ;
+tcase = project.testSuites["TestSuite2"].testCases["RunRequest"] ; 
+tstep = tcase.getTestStepByName("GetCountryByName");
+def status = tstep.run(testRunner, context)
+def result = status.getStatus().toString();
+log.info ("   ----   "+result)
+</script></con:config></con:testStep><con:testStep type="restrequest" name="GetCountryByName" id="06846520-2a12-4790-b8d6-ed8136e1e432"><con:settings/><con:config service="https://restcountries.eu" resourcePath="/rest/v2/name/{CountryName}" methodName="All 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GetCountryByName" id="4affaf71-2419-493a-a89f-1517299fb911" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://restcountries.eu</con:endpoint><con:request/><con:originalUri>https://restcountries.eu/rest/v2/all</con:originalUri><con:assertion type="Simple Contains" id="8822bf25-7337-4525-a18e-b737fc478914" name="Contains"><con:configuration><token>Hong Kong</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="CountryName" value="hong kong" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>CountryName</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="73ed6b6d-63ff-4152-b1ca-13c1f889efd4" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="CallFunction" searchProperties="true"><con:settings/><con:testStep type="groovy" name="CallHello" id="0a3ab771-214a-43c0-917e-b0ed5b8758d8"><con:settings/><con:config><script>project = testRunner.testCase.testSuite.project ;
+tcase = project.testSuites["TestSuite2"].testCases["GroovyScript"] ; 
+hello = tcase.getTestStepByName("Hello");
+
+hello.run(testRunner, context)
+
+//def testStep = testRunner.testCase.getTestStepByName("Hello")
+
+//testStep.run (testRunner,context)
+
+context.Hello.sayHello("Fiona")</script></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="bef62dd4-e4ad-48c3-9714-f16b0b302f5a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="RunTest" searchProperties="true"><con:settings/><con:testStep type="groovy" name="RunTestCase" id="adde5933-946f-4526-9d60-62fd866e0ab9"><con:settings/><con:config><script>//Call self will end up dead loop
+def tCase=testRunner.testCase.testSuite.testCases["RunRequest"]
+
+def prop=new com.eviware.soapui.support.types.StringToObjectMap()
+
+runner=tCase.run(prop,true)
+
+//runner=tCase.run(null,false)
+
+log.info ("   >>> " + runner.getStatus().toString())
+
+//how to get all test cases
+
+def testCases = context.testCase.testSuite.getTestCaseList()
+
+testCases.each{
+	
+	log.info (it.name)
+	}
+
+//get current test name
+
+log.info (testRunner.testCase.name)
+
+/*
+ * Launch TestRunner of the case to get command lines listed below
+cd /Applications/SoapUI-5.5.0.app/Contents/java/app/bin/.
+ ./testrunner.sh -sTestSuite3 -cTestCase2 /Users/funazhang/SoapUI-Tutorials/CountryInfoService-soapui-project.xml
+*/</script></con:config></con:testStep><con:testStep type="groovy" name="RunTestSuite" id="c11fcf0a-3dd5-417f-8ee8-d1210c411407"><con:settings/><con:config><script>def tSuite=context.testCase.testSuite.project.testSuites["TestSuite1"]
+
+def prop=new com.eviware.soapui.support.types.StringToObjectMap()
+
+tSuite.run(prop,true)
+//tSuite.run(null,false)
+
+log.info ("   >>> Test Result "+tSuite.getName().toString()+ " Executed Successfully")
+
+/*
+ * Launch TestRunner and get the command lines listed below
+ * 
+ * cd /Applications/SoapUI-5.5.0.app/Contents/java/app/bin/.
+ * ./testrunner.sh -sTestSuite2 /Users/funazhang/SoapUI-Tutorials/CountryInfoService-soapui-project.xml
+
+ */
+</script></con:config></con:testStep><con:testStep type="groovy" name="RunTestProject" id="1ae7a4f1-bebb-4bd3-bb37-93f5b83c778a"><con:settings/><con:config><script>def projectName=testRunner.getTestCase().getTestSuite().getProject().getWorkspace().getProjectByName("CountryInfoService")
+
+//projectName.run(null,true)
+
+def prop = new com.eviware.soapui.support.types.StringToObjectMap()
+
+
+//projectName.run(prop,false)
+
+def result = projectName.run(prop,true)
+
+////def result = projectName.run(null,true)
+
+Thread.sleep (30000)
+
+log.info ("   >>> " + result.getStatus().toString())
+
+/*
+ * Launch TestRunner to get command run lines listed below
+ * cd /Applications/SoapUI-5.5.0.app/Contents/java/app/bin/.
+ * ./testrunner.sh -f/Applications/SoapUI-5.5.0.app/Contents/java/app/bin/Result /Users/funazhang/SoapUI-Tutorials/CountryInfoService-soapui-project.xml
+ */</script></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property><con:property><con:name>DOB</con:name></con:property></con:properties><con:afterLoadScript>def su = new File("Setup.txt").text
 def td = new File("TearDown.txt").text
 
 project.getTestSuriteList().each { testSuite ->
