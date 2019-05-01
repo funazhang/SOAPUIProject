@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="15b82e50-31ec-4ef2-93b0-333be9d762eb" activeEnvironment="Default" name="Meta" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="TestSuite" value="TestSuite1"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="TestCase" value="Menus"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:RestService" id="04ecad2a-8444-4b43-8efc-4dee8676d5d2" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://api.temenos.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint></con:endpoints><con:resource name="Apis" path="/apis" id="194683fe-113c-4c78-9dc9-f5bf97973e28"><con:settings/><con:parameters><con:parameter><con:name>apikey</con:name><con:value>${#Project#apikey}</con:value><con:style>HEADER</con:style><con:default>${#Project#apikey}</con:default></con:parameter></con:parameters><con:method name="Apis 1" id="8765fcee-6632-483e-aaa6-61f9c43b8301" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>text/html</con:mediaType><con:status>200</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:apis="https://api.temenos.com/api/v1.0.0/meta/apis">apis:Response</con:element></con:representation><con:request name="apis" id="c75a60ee-fa02-43c9-b91e-9d13a8b31d1b" mediaType="application/json"><con:settings/><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="apikey" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>apikey</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="apidocs" path="/apidocs" id="f519e6c2-05f3-41ad-baf0-3fc656794898"><con:settings/><con:parameters><con:parameter><con:name>apikey</con:name><con:value>${#Project#apikey}</con:value><con:style>HEADER</con:style><con:default>${#Project#apikey}</con:default></con:parameter></con:parameters><con:method name="Method 1" id="f0e55fa4-b0e2-44ef-b163-413a26c5af03" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>text/html</con:mediaType><con:status>200</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:apid="https://api.temenos.com/api/v1.0.0/meta/apidocs">apid:Response</con:element></con:representation><con:request name="Request 1" id="d0ab2717-8e56-4621-bbc7-02a8e654b49b" mediaType="application/json"><con:settings/><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="apikey" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>apikey</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="apis" path="/internal/apis" id="37994748-f0de-49fc-b968-e7a21a620639"><con:settings/><con:parameters><con:parameter><con:name>apikey</con:name><con:value>${#Project#apikey}</con:value><con:style>HEADER</con:style><con:default>${#Project#apikey}</con:default></con:parameter></con:parameters><con:method name="Method 1" id="ceb59d48-ddbd-42c1-af94-9bc363c0cc3f" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>text/html</con:mediaType><con:status>200</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:apis="https://api.temenos.com/api/v1.0.0/meta/internal/apis">apis:Response</con:element></con:representation><con:request name="Request 1" id="98897c55-587f-4227-b836-676b145061bc" mediaType="application/json"><con:settings/><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="apikey" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>apikey</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="menus" path="/menus" id="3b265def-61cd-49db-b7cc-dfe168ec5355"><con:settings/><con:parameters><con:parameter><con:name>apikey</con:name><con:value>${#Project#apikey}</con:value><con:style>HEADER</con:style><con:default>${#Project#apikey}</con:default></con:parameter></con:parameters><con:resource name="{menuId}" path="{menuId}" id="fcb80a58-e850-45c1-ade5-6ab92671fb5b"><con:settings/><con:parameters><con:parameter><con:name>menuId</con:name><con:value>menuId</con:value><con:style>TEMPLATE</con:style><con:default>menuId</con:default></con:parameter></con:parameters><con:method name="Method 1" id="919ca17d-2a3b-4acc-9f5b-7e07c39b2e0c" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>text/html;charset=UTF-8</con:mediaType><con:status>404</con:status><con:params/><con:element>html</con:element></con:representation><con:request name="Request 1" id="5daeb18c-4173-47a6-9580-dac9b82e0956" mediaType="application/json"><con:settings/><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method><con:method name="Method 2" id="9b262dbe-d74b-464a-bd1f-c65e584edf47" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>text/html;charset=UTF-8</con:mediaType><con:status>401</con:status><con:params/><con:element>html</con:element></con:representation><con:request name="Request 1" id="a9e8dd8a-d4d5-4e83-ac1d-4e078a291954" mediaType="application/json" postQueryString="false"><con:settings/><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="mainmenus" path="mainmenus" id="02efa868-7dd5-4124-8490-0d3c036e79d4"><con:settings/><con:parameters/><con:resource name="{menuId}" path="{menuId}" id="52d54e87-a913-4d10-8a51-1fbac0661b37"><con:settings/><con:parameters><con:parameter><con:name>menuId</con:name><con:value>menuId</con:value><con:style>TEMPLATE</con:style><con:default>menuId</con:default></con:parameter></con:parameters><con:method name="Method 1" id="9a3e0b97-a979-4cbe-a4c8-d5b10060ad61" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>text/html;charset=UTF-8</con:mediaType><con:status>404</con:status><con:params/><con:element>html</con:element></con:representation><con:request name="Request 1" id="4a643d8d-658d-4b99-9179-e6a787076ce6" mediaType="application/json"><con:settings/><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method><con:method name="Method 2" id="1a66fec2-1879-416f-9d72-49e6762cba33" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>text/html;charset=UTF-8</con:mediaType><con:status>401</con:status><con:params/><con:element>html</con:element></con:representation><con:request name="Request 1" id="c2ff461d-2eae-4942-906c-5fe3d13fa188" mediaType="application/json" postQueryString="false"><con:settings/><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:method name="Method 1" id="e3f76041-1c87-4f32-9f1f-39a1b1ffa5dc" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>text/html;charset=UTF-8</con:mediaType><con:status>404</con:status><con:params/><con:element>html</con:element></con:representation><con:request name="Request 1" id="11c4d402-b433-45e5-a94a-091a82bb39fd" mediaType="application/json"><con:settings/><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:method name="Method 1" id="c839c05b-d286-43de-9290-2406911c9bb5" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>text/html;charset=UTF-8</con:mediaType><con:status>404</con:status><con:params/><con:element>html</con:element></con:representation><con:request name="Request 1" id="5a5dc345-35dd-46ce-ba6c-51736d1944f5" mediaType="application/json"><con:settings/><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="apikey" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>apikey</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="queries" path="/queries" id="b130a878-8614-496b-b25f-850c3120a65d"><con:settings/><con:parameters><con:parameter><con:name>apikey</con:name><con:value>${#Project#apikey}</con:value><con:style>HEADER</con:style><con:default>${#Project#apikey}</con:default></con:parameter></con:parameters><con:resource name="{queryId}" path="{queryId}" id="2cb0c2e1-fa5c-40ff-9573-4a757a6af585"><con:settings/><con:parameters><con:parameter><con:name>queryId</con:name><con:value>queryId</con:value><con:style>TEMPLATE</con:style><con:default>queryId</con:default></con:parameter></con:parameters><con:method name="Method 1" id="1e3172ec-c9d3-4f7e-a2e2-cca9c2912b88" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:quer="https://api.temenos.com/api/v1.0.0/meta/queries/queryId">quer:Response</con:element></con:representation><con:request name="Request 1" id="23dc1db7-5cf1-4769-90eb-6f244d6709ea" mediaType="application/json"><con:settings/><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="apikey" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>queryId</con:entry><con:entry>apikey</con:entry></con:parameterOrder></con:request></con:method><con:method name="Method 2" id="fb896172-83fa-40ff-a551-d4fa3f467528" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>403</con:status><con:params/><con:element xmlns:quer="https://api.temenos.com/api/v1.0.0/meta/queries/queryId">quer:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:quer="https://api.temenos.com/api/v1.0.0/meta/queries/queryId">quer:Response</con:element></con:representation><con:request name="Request 1" id="a8b7c371-a980-4b4c-a7c8-501903e2aed6" mediaType="application/json" postQueryString="false"><con:settings/><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="apikey" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>queryId</con:entry><con:entry>apikey</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:method name="Method 1" id="160e87f2-0f3c-45cf-ae5c-2efb2de81a99" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:quer="https://api.temenos.com/api/v1.0.0/meta/queries">quer:Response</con:element></con:representation><con:request name="Request 1" id="12c30e61-a939-46ce-b02b-619ec7eb1a96" mediaType="application/json"><con:settings/><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="apikey" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>apikey</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="screens" path="/screens" id="beb4ce80-7446-4ebf-96d4-e11935c9d08f"><con:settings/><con:parameters><con:parameter><con:name>apikey</con:name><con:value>${#Project#apikey}</con:value><con:style>HEADER</con:style><con:default>${#Project#apikey}</con:default></con:parameter></con:parameters><con:resource name="{screenId}" path="{screenId}" id="1a47a9a5-fd7b-4352-a990-f223a758c632"><con:settings/><con:parameters><con:parameter><con:name>screenId</con:name><con:value>screenId</con:value><con:style>TEMPLATE</con:style><con:default>screenId</con:default></con:parameter></con:parameters><con:method name="Method 1" id="d29652e4-7ba8-4cc2-97e7-e0ecacb7a364" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:aa="https://api.temenos.com/api/v1.0.0/meta/screens/AA.API.CLASS%2C">aa:Response</con:element></con:representation><con:request name="Request 1" id="5220a652-d514-4246-988e-034bd662984b" mediaType="application/json"><con:settings/><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method><con:method name="Method 2" id="082c05ee-6d1e-4994-a341-056ee5721252" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>403</con:status><con:params/><con:element xmlns:aa="https://api.temenos.com/api/v1.0.0/meta/screens/AA.API.CLASS%2C">aa:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:aa="https://api.temenos.com/api/v1.0.0/meta/screens/AA.API.CLASS%2C">aa:Response</con:element></con:representation><con:request name="Request 1" id="06b32516-0400-4301-9977-2e76b4c9bb23" mediaType="application/json" postQueryString="false"><con:settings/><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:method name="Method 1" id="4717e761-b7d4-4ed3-a54a-fa4dad1bd80c" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:scr="https://api.temenos.com/api/v1.0.0/meta/screens">scr:Response</con:element></con:representation><con:request name="Request 1" id="b5a5e6b7-a97f-41ee-850e-541783853071" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:originalUri>https://api.temenos.com/api/v1.0.0/meta/screens</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="apikey" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>apikey</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="tables" path="/tables" id="0a7de247-c287-4e7e-a715-0d389db09b18"><con:settings/><con:parameters><con:parameter><con:name>apikey</con:name><con:value>${#Project#apikey}</con:value><con:style>HEADER</con:style><con:default>${#Project#apikey}</con:default></con:parameter></con:parameters><con:resource name="fields" path="{tableId}/fields" id="f74621c4-26fd-4cbf-b34e-9c2f30baabac"><con:settings/><con:parameters><con:parameter><con:name>tableId</con:name><con:value>tableId</con:value><con:style>TEMPLATE</con:style><con:default>tableId</con:default></con:parameter></con:parameters><con:method name="Method 1" id="c7406c8c-124a-450c-9233-be67c7ac2863" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="704ea2bf-89f8-4c9f-9e60-1c309c2b1bed" mediaType="application/json"><con:settings/><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="tableId" value="tableId" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request></con:method></con:resource><con:resource name="screens" path="{tableId}/screens" id="9869c9f0-aa26-4db0-96df-04aba74cdf56"><con:settings/><con:parameters><con:parameter disableUrlEncoding="true"><con:name>tableId</con:name><con:value>{tableId}</con:value><con:style>TEMPLATE</con:style><con:default>{tableId}</con:default></con:parameter></con:parameters><con:method name="Method 1" id="6105a810-ca36-46c9-9898-42dd9eeeed53" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>404</con:status><con:params/><con:element xmlns:scr="https://api.temenos.com/api/v1.0.0/meta/tables/AA.ACCOUNT.DETAILS/screens">scr:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:scr="https://api.temenos.com/api/v1.0.0/meta/tables/AA.ACCOUNT.DETAILS/screens">scr:Response</con:element></con:representation><con:request name="Request 1" id="f6865092-9966-4547-afff-75c1cff5a922" mediaType="application/json"><con:settings/><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:method name="Method 1" id="0c0a331c-5802-4c63-8a75-1e8a702b51dd" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:tab="https://api.temenos.com/api/v1.0.0/meta/tables">tab:Response</con:element></con:representation><con:request name="Request 1" id="529d1c7a-df9a-42f2-813e-d1d8c8594861" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:originalUri>https://api.temenos.com/api/v1.0.0/meta/tables</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="apikey" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>apikey</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="{virtualTableName}" path="/lookup/{virtualTableName}" id="c2490916-7fad-4486-8be3-71d185aaaa73"><con:settings/><con:parameters><con:parameter required="false" disableUrlEncoding="false"><con:name>apikey</con:name><con:value>${#Project#apikey}</con:value><con:style>HEADER</con:style><con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type><con:default>${#Project#apikey}</con:default><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>virtualTableName</con:name><con:value>virtualTableName</con:value><con:style>TEMPLATE</con:style><con:default>virtualTableName</con:default></con:parameter></con:parameters><con:method name="Method 1" id="05fed64b-4457-4c72-8758-7d9383eb2af1" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>text/html;charset=UTF-8</con:mediaType><con:status>404</con:status><con:params/><con:element>html</con:element></con:representation><con:request name="Request 1" id="a5d852c8-46d9-4c87-87c9-dcc57b0793a4" mediaType="application/json"><con:settings/><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="apikey" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>apikey</con:entry><con:entry>virtualTableName</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:testSuite id="29b9d093-aca4-4fb2-a7b9-630582e66941" name="TestSuite1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="f4b5fed6-3901-4451-aeab-392f98447f19" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="APIReference" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="getApis" id="852506f7-7b77-4f03-a1cb-9080aff076ba"><con:settings/><con:config service="https://api.temenos.com" resourcePath="/apis" methodName="Apis 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getApis" id="c75a60ee-fa02-43c9-b91e-9d13a8b31d1b" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:originalUri>https://api.temenos.com/api/v1.0.0/meta/apis</con:originalUri><con:assertion type="Simple Contains" id="427daa56-39b2-4954-9e9c-8afd6555e210" name="Contains"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="30d7a364-e5a2-4b81-82eb-644da645b12e" name="services"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="apikey" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>apikey</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="getApidocs" id="9264261b-edfa-42ed-be45-89032e7f55aa"><con:settings/><con:config service="https://api.temenos.com" resourcePath="/apidocs" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getApidocs" id="d0ab2717-8e56-4621-bbc7-02a8e654b49b" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:originalUri>https://api.temenos.com/api/v1.0.0/meta/apidocs</con:originalUri><con:assertion type="Simple Contains" id="c1a6d27b-3ad7-4731-bb79-1966e9e7c4c6" name="Contains"><con:configuration><token>title</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="apikey" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>apikey</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="getInternalApis" id="c6f5ca60-c986-4747-b17a-3d625b3fb690"><con:settings/><con:config service="https://api.temenos.com" resourcePath="/internal/apis" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getInternalApis" id="98897c55-587f-4227-b836-676b145061bc" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:originalUri>https://api.temenos.com/api/v1.0.0/meta/internal/apis</con:originalUri><con:assertion type="Simple Contains" id="727411ed-5f53-4b4b-ad81-387678a65aa6" name="Contains"><con:configuration><token>endPoints</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="apikey" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>apikey</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="3a09f94f-aa49-4b66-844b-61e7a0d75a77" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Menus" searchProperties="true" disabled="true"><con:settings/><con:testStep type="restrequest" name="getMenus" id="5bde9959-289a-4924-a38b-5ad67d3d9ab1"><con:settings/><con:config service="https://api.temenos.com" resourcePath="/menus" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getMenus" id="5a5dc345-35dd-46ce-ba6c-51736d1944f5" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:originalUri>https://api.temenos.com/api/v1.0.0/meta/menus</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="apikey" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>apikey</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="getMenu" id="eb55508e-7cf4-43b0-ab38-407ef55215e2"><con:settings/><con:config service="https://api.temenos.com" resourcePath="/menus/{menuId}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getMenu" id="5daeb18c-4173-47a6-9580-dac9b82e0956" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="postMenu" id="b813f655-17cd-43ad-be32-f933a5fb92a8"><con:settings/><con:config service="https://api.temenos.com" resourcePath="/menus/{menuId}" methodName="Method 2" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="postMenu" id="a9e8dd8a-d4d5-4e83-ac1d-4e078a291954" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="getMainmenus" id="581d5ba4-9e97-4c0c-8fca-a25306d2099b"><con:settings/><con:config service="https://api.temenos.com" resourcePath="/menus/mainmenus" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getMainmenus" id="11c4d402-b433-45e5-a94a-091a82bb39fd" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="getMainmenu" id="86ebb651-6279-4674-81a7-4165f7100d83"><con:settings/><con:config service="https://api.temenos.com" resourcePath="/menus/mainmenus/{menuId}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getMainmenu" id="4a643d8d-658d-4b99-9179-e6a787076ce6" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="postMainmenu" id="d8d5ad6a-7c37-41c6-b720-b4c12b965e37"><con:settings/><con:config service="https://api.temenos.com" resourcePath="/menus/mainmenus/{menuId}" methodName="Method 2" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="postMainmenu" id="c2ff461d-2eae-4942-906c-5fe3d13fa188" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="bfd43645-6e01-40a5-89e5-ba365db67f4d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Queries" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="getQueries" id="57094f66-4e4e-4a64-8f8f-9d3d89d13572"><con:settings/><con:config service="https://api.temenos.com" resourcePath="/queries" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getQueries" id="12c30e61-a939-46ce-b02b-619ec7eb1a96" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:originalUri>https://api.temenos.com/api/v1.0.0/meta/queries</con:originalUri><con:assertion type="Simple Contains" id="88b21657-dce8-4e3f-a38e-cdc2192e0314" name="Contains"><con:configuration><token>queryId</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="apikey" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>apikey</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="transferQueryId" id="3518b43e-153f-40a2-a054-dafe21f5d815"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>queryId4Get</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>getQueries</con:sourceStep><con:sourcePath>.body[0].queryId</con:sourcePath><con:targetType>queryId</con:targetType><con:targetStep>getQuery</con:targetStep><con:type>JSONPATH</con:type><con:upgraded>true</con:upgraded></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" disabled="false" entitize="false" ignoreEmpty="false" transferChildNodes="false" transferToAll="false" useXQuery="false"><con:name>queryId4Post</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>getQueries</con:sourceStep><con:sourcePath>.body[0].queryId</con:sourcePath><con:targetType>queryId</con:targetType><con:targetStep>postQuery</con:targetStep><con:targetPath xsi:nil="true"/><con:type>JSONPATH</con:type><con:targetTransferType>XPATH</con:targetTransferType><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="restrequest" name="getQuery" id="6a80beb4-9c01-44a2-907e-4d6c6b7c3fc6"><con:settings/><con:config service="https://api.temenos.com" resourcePath="/queries/{queryId}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getQuery" id="23dc1db7-5cf1-4769-90eb-6f244d6709ea" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:originalUri>https://api.temenos.com/api/v1.0.0/meta/queries/queryId</con:originalUri><con:assertion type="Simple Contains" id="24f2578e-ba16-4da9-a570-45106b16b35b" name="Contains"><con:configuration><token>selections</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="apikey" value="${#Project#apikey}"/>
+  <con:entry key="queryId" value="AA.API.ARRANGEMENTS.1.0.0"/>
+</con:parameters><con:parameterOrder><con:entry>queryId</con:entry><con:entry>apikey</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="postQuery" id="53f715cf-ee75-47c8-8d7d-31c545d8c779"><con:settings/><con:config service="https://api.temenos.com" resourcePath="/queries/{queryId}" methodName="Method 2" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="postQuery" id="a8b7c371-a980-4b4c-a7c8-501903e2aed6" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request> {
+ "body":    {
+      "selections":       [
+                  {
+            "selectionLabel": "arrangementId",
+            "selectionField": "@ID",
+            "selectionOperand": "EQ"
+         },
+                  {
+            "selectionLabel": "customerId",
+            "selectionField": "CUSTOMER",
+            "selectionOperand": "EQ"
+         },
+                  {
+            "selectionLabel": "productLineId",
+            "selectionField": "PRODUCT.LINE",
+            "selectionOperand": "EQ"
+         },
+                  {
+            "selectionLabel": "productGroupId",
+            "selectionField": "PRODUCT.GROUP",
+            "selectionOperand": "EQ"
+         },
+                  {
+            "selectionLabel": "productId",
+            "selectionField": "PRODUCT",
+            "selectionOperand": "EQ"
+         }
+      ],
+      "columns":       [
+                  {
+            "fieldName": "ARRANGEMENT",
+            "operations": [{"operation": "ARRANGEMENT.ID"}],
+            "columnNumber": "1",
+            "label": "arrangementId",
+            "singleMulti": "S",
+            "lengthMask": "17L"
+         },
+                  {
+            "fieldName": "LINKED.APPL.ID",
+            "operations": [{"operation": "LINKED.APPL.ID"}],
+            "singleMulti": "S",
+            "lengthMask": "35L"
+         },
+                  {
+            "fieldName": "ACCOUNT",
+            "operations": [{"operation": "LINKED.APPL.ID"}],
+            "columnNumber": "2",
+            "label": "accountId",
+            "singleMulti": "S",
+            "lengthMask": "35L"
+         },
+                  {
+            "fieldName": "ACCT.NAME",
+            "operations": [{"operation": "LINKED.APPL.ID"}],
+            "columnNumber": "3",
+            "label": "accountName",
+            "singleMulti": "S",
+            "lengthMask": "35L"
+         },
+                  {
+            "fieldName": "CURRENCY",
+            "operations": [{"operation": "CURRENCY"}],
+            "columnNumber": "5",
+            "label": "currencyId",
+            "singleMulti": "S",
+            "lengthMask": "3L"
+         },
+                  {
+            "fieldName": "TERM.AMOUNT",
+            "operations": [{"operation": "F ARRANGEMENT"}]
+         },
+                  {
+            "fieldName": "AMOUNT",
+            "operations": [{"operation": "F TERM.AMOUNT"}],
+            "columnNumber": "6",
+            "dataType": "AMOUNT",
+            "label": "termAmount",
+            "singleMulti": "S"
+         },
+                  {
+            "fieldName": "PRODUCT",
+            "operations": [{"operation": "PRODUCT"}],
+            "columnNumber": "7",
+            "label": "productId",
+            "singleMulti": "S",
+            "lengthMask": "30L"
+         },
+                  {
+            "fieldName": "PRODUCT.GROUP",
+            "operations": [{"operation": "PRODUCT.GROUP"}],
+            "columnNumber": "8",
+            "label": "productGroupId",
+            "singleMulti": "S",
+            "lengthMask": "30L"
+         },
+                  {
+            "fieldName": "PRODUCT.LINE",
+            "operations": [{"operation": "PRODUCT.LINE"}],
+            "columnNumber": "9",
+            "label": "productLineId",
+            "singleMulti": "S",
+            "lengthMask": "10L"
+         },
+                  {
+            "fieldName": "CATEGORY",
+            "operations": [{"operation": "LINKED.APPL.ID"}],
+            "columnNumber": "10",
+            "label": "category",
+            "singleMulti": "S",
+            "lengthMask": "35L"
+         },
+                  {
+            "fieldName": "OPENING.DATE",
+            "operations": [{"operation": "LINKED.APPL.ID"}],
+            "columnNumber": "11",
+            "dataType": "DATE",
+            "label": "openingDate",
+            "singleMulti": "S",
+            "lengthMask": "35L"
+         },
+                  {
+            "fieldName": "DEPOSIT.PREFERENCES",
+            "operations": [{"operation": "C ARRANGEMENT : \"-\" : PRODUCT.LINE"}]
+         },
+                  {
+            "fieldName": "DEPOSIT.TRANS.RIGHTS",
+            "operations": [{"operation": "F DEPOSIT.PREFERENCES"}],
+            "label": "depositTransRights",
+            "singleMulti": "S"
+         },
+                  {
+            "fieldName": "EXT.PRF.DEPOSIT",
+            "operations": [{"operation": "F DEPOSIT.PREFERENCES"}],
+            "label": "extPrfDeposit",
+            "singleMulti": "S"
+         },
+                  {
+            "fieldName": "EXT.PRF.DEPOSIT.LABEL",
+            "operations": [{"operation": "F DEPOSIT.PREFERENCES"}],
+            "label": "extPrfDepositLabel",
+            "singleMulti": "S"
+         },
+                  {
+            "fieldName": "EXT.PRF.DEPOSIT.POS",
+            "operations": [{"operation": "F DEPOSIT.PREFERENCES"}],
+            "label": "extPrfDepositPos",
+            "singleMulti": "S"
+         },
+                  {
+            "fieldName": "DEPOSIT.SEE.RIGHTS",
+            "operations": [{"operation": "F DEPOSIT.PREFERENCES"}],
+            "label": "depositSeeRights",
+            "singleMulti": "S"
+         }
+      ],
+      "pageSize": "4,29",
+      "description": "getArrangements",
+      "fixedSelections": [{"fixedSelection": "ARR.STATUS NE UNAUTH CANCELLED MATURED CLOSE"}],
+      "table": "AA.ARRANGEMENT"
+   }
+}</con:request><con:originalUri>https://api.temenos.com/api/v1.0.0/meta/queries/queryId</con:originalUri><con:assertion type="Simple Contains" id="6eb7c394-a2b5-4950-9b1b-18219f7237a2" name="Contains"><con:configuration><token>pageSize</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="apikey" value="${#Project#apikey}"/>
+  <con:entry key="queryId" value="AA.API.ARRANGEMENTS.1.0.0"/>
+</con:parameters><con:parameterOrder><con:entry>queryId</con:entry><con:entry>apikey</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="adede497-d482-4379-9aba-095b949dc490" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Screens" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="getScreens" id="7a0698fd-ef9c-4a00-adb8-70ba3d61f135"><con:settings/><con:config service="https://api.temenos.com" resourcePath="/screens" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getScreens" id="b5a5e6b7-a97f-41ee-850e-541783853071" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:originalUri>https://api.temenos.com/api/v1.0.0/meta/screens</con:originalUri><con:assertion type="Simple Contains" id="1fbc9c85-29b9-4926-a7c4-1d780b3a489d" name="Contains"><con:configuration><token>screenId</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="apikey" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>apikey</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="transferScreenId" id="6d129ec1-d23e-4f8e-8e57-61fa70cb2a0d"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>screenId4Get</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>getScreens</con:sourceStep><con:sourcePath>.body[1].screenId</con:sourcePath><con:targetType>screenId</con:targetType><con:targetStep>getScreenId</con:targetStep><con:type>JSONPATH</con:type><con:upgraded>true</con:upgraded></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" disabled="false" entitize="false" ignoreEmpty="false" transferChildNodes="false" transferToAll="false" useXQuery="false"><con:name>screenId4Post</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>getScreens</con:sourceStep><con:sourcePath>.body[1].screenId</con:sourcePath><con:targetType>screenId</con:targetType><con:targetStep>postScreenId</con:targetStep><con:targetPath xsi:nil="true"/><con:type>JSONPATH</con:type><con:targetTransferType>XPATH</con:targetTransferType><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="restrequest" name="getScreenId" id="83d5fe9c-b9c7-4cb7-b73e-37232aa97f25"><con:settings/><con:config service="https://api.temenos.com" resourcePath="/screens/{screenId}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getScreenId" id="5220a652-d514-4246-988e-034bd662984b" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:originalUri>https://api.temenos.com/api/v1.0.0/meta/screens/AA.API.CLASS%2C</con:originalUri><con:assertion type="Simple Contains" id="0d26b6b2-1280-44c2-810f-9802d28c5c54" name="Contains"><con:configuration><token>success</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="screenId" value="AA.ARR.ACCOUNT,AA.API.REQUEST.1.0.0" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="postScreenId" id="a3a97122-8fe4-409d-9e44-f29115e3e932"><con:settings/><con:config service="https://api.temenos.com" resourcePath="/screens/{screenId}" methodName="Method 2" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="postScreenId" id="06b32516-0400-4301-9977-2e76b4c9bb23" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request>{ 
+ "body":    {
+      "fieldsPerLine": "MULTI",
+      "requiredApprovers": "1",
+      "description": "accountRequest",
+      "recordsPerPage": "1",
+      "language": "1",
+      "fields":       [
+                  {
+            "field": "ACCOUNT.TITLE.1-1",
+            "column": "1",
+            "label": "accountType"
+         },
+                  {
+            "field": "SHORT.TITLE-1",
+            "column": "1",
+            "label": "accountName"
+         },
+                  {
+            "field": "ACCOUNT.REFERENCE",
+            "column": "1",
+            "label": "accountId"
+         },
+                  {
+            "field": "PORTFOLIO.ID",
+            "column": "1",
+            "label": "portfolioId"
+         },
+                  {
+            "field": "ALT.ID.TYPE-1",
+            "column": "1",
+            "label": "alternateIdType",
+            "groupBy": "alternateId"
+         }
+               
+      ]
+   }
+}</con:request><con:originalUri>https://api.temenos.com/api/v1.0.0/meta/screens/AA.API.CLASS%2C</con:originalUri><con:assertion type="Simple Contains" id="4027eba2-5c0a-40fa-9fac-2116a5bb599f" name="Contains"><con:configuration><token>success</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="screenId" value="AA.ARR.ACCOUNT,AA.API.REQUEST.1.0.0" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="a86cfa93-6fde-47ad-9566-de6b12fd69c0" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Tables" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="getTables" id="f8df0205-4613-46df-b667-d271b444e476"><con:settings/><con:config service="https://api.temenos.com" resourcePath="/tables" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getTables" id="529d1c7a-df9a-42f2-813e-d1d8c8594861" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:originalUri>https://api.temenos.com/api/v1.0.0/meta/tables</con:originalUri><con:assertion type="Simple Contains" id="862a6c8d-c5cf-4926-ae2a-2adc7b515c52" name="Contains"><con:configuration><token>tableId</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="apikey" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>apikey</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="transferTableId" id="80b0751e-3316-40be-a809-586c47fb37ec"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false"><con:name>tableId4Screens</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>getTables</con:sourceStep><con:sourcePath>.body[1].tableId</con:sourcePath><con:targetType>tableId</con:targetType><con:targetStep>getTableScreens</con:targetStep><con:type>JSONPATH</con:type><con:upgraded>true</con:upgraded></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" disabled="false" entitize="false" ignoreEmpty="false" transferChildNodes="false" transferToAll="false" useXQuery="false"><con:name>tableId4Fields</con:name><con:sourceType>Response</con:sourceType><con:sourceStep>getTables</con:sourceStep><con:sourcePath>.body[0].tableId</con:sourcePath><con:targetType>tableId</con:targetType><con:targetStep>getTableFields</con:targetStep><con:targetPath xsi:nil="true"/><con:type>JSONPATH</con:type><con:targetTransferType>XPATH</con:targetTransferType><con:upgraded>true</con:upgraded></con:transfers></con:config></con:testStep><con:testStep type="restrequest" name="getTableScreens" id="332be0be-b154-48a6-9c48-bb1435f3df4f"><con:settings/><con:config service="https://api.temenos.com" resourcePath="/tables/{tableId}/screens" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getTableScreens" id="f6865092-9966-4547-afff-75c1cff5a922" mediaType="application/json" multiValueDelimiter=","><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:originalUri>https://api.temenos.com/api/v1.0.0/meta/tables/AA.ACCOUNT.DETAILS/screens</con:originalUri><con:assertion type="Simple Contains" id="e01b246e-923e-40ad-b610-3cd713d579e5" name="Contains"><con:configuration><token>screenId</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="tableId" value="AA.ARR.ACTIVITY.API" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="getTableFields" id="317763de-52a9-4d8e-8215-5ddc76aba6c0"><con:settings/><con:config service="https://api.temenos.com" resourcePath="/tables/{tableId}/fields" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getTableFields" id="704ea2bf-89f8-4c9f-9e60-1c309c2b1bed" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:originalUri>https://api.temenos.com/api/v1.0.0/meta/tables/AA.ACCOUNT.DETAILS/fields</con:originalUri><con:assertion type="Simple Contains" id="44aae3d9-30a0-48d8-94be-64c3a199a538" name="Contains"><con:configuration><token>systemFields</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="tableId" value="AA.ACCOUNT.DETAILS" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="findValidParam" id="dac8c6ed-ac08-4836-92fc-323b7973b898" disabled="true"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+/*
+customerResponseContent = testRunner.testCase.getTestStepByName("getCustomers").getPropertyValue("response")
+
+custonerJsonParser = new JsonSlurper().parseText(customerResponseContent)
+
+def customerId=custonerJsonParser.body[0].tableId
+
+def tstep = testRunner.testCase.getTestStepByName("getAccounts")
+
+for (int i=0; i&lt;custonerJsonParser.body.size(); i++){
+
+	customerId=custonerJsonParser.body[i].customerId
+	
+	context.testCase.setPropertyValue("customerId", customerId)
+	
+	tstep.run(testRunner, context)
+
+	header = testRunner.testCase.testSteps['getAccounts'].testRequest.response.getResponseHeaders()
+
+	if (header["#status#"] == ['HTTP/1.1 404 Not Found']){
+		continue
+	}
+	*/
+	responseContent = testRunner.testCase.getTestStepByName("getTables").getPropertyValue("response")
+	
+	jsonParser = new JsonSlurper().parseText(responseContent)
+	
+	def tableId=jsonParser.body[0].tableId
+	
+	def tableIds=""
+
+	for (int j=0; j&lt;jsonParser.body.size(); j++){
+
+		tableId=jsonParser.body[j].tableId
+		
+		def tsteps = testRunner.testCase.getTestStepByName("getTableScreens")
+		
+		context.testCase.setPropertyValue("tableId", tableId)
+		
+		
+		def status = tsteps.run(testRunner, context)
+		
+		header = testRunner.testCase.testSteps['getTableScreens'].testRequest.response.getResponseHeaders()
+		
+		
+		if (header["#status#"] == ['HTTP/1.1 200 OK']){
+		
+			if (tableIds.length() == 0){
+				
+				tableIds = tableId
+			}
+			else
+		
+			tableIds = tableIds + ","+ tableId
+		
+		}
+		
+		
+		sleep (100)
+		
+		}
+
+
+	if (tableIds.length() >0) {
+		
+		log.info (tableIds)
+		
+		i = custonerJsonParser.body.size()
+	}
+
+//}
+</script></con:config></con:testStep><con:properties><con:property><con:name>tableId</con:name><con:value>AA.ARR.CUSTOMER</con:value></con:property></con:properties></con:testCase><con:testCase id="000c3492-1aa5-4802-8bb4-7f8b47d23631" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="VirtualtablesService" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="getVirtualTableByName" id="f3575dac-1bd0-43bf-a610-751f8681b87c"><con:settings/><con:config service="https://api.temenos.com" resourcePath="/lookup/{virtualTableName}" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getVirtualTableByName" id="a5d852c8-46d9-4c87-87c9-dcc57b0793a4" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:originalUri>https://api.temenos.com/api/v1.0.0/meta/lookup/customer</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="apikey" value="${#Project#apikey}"/>
+  <con:entry key="virtualTableName" value="${#TestCase#tableId}"/>
+</con:parameters><con:parameterOrder><con:entry>apikey</con:entry><con:entry>virtualTableName</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="getTables" id="203b05f1-a7ea-494c-ac8c-89b42e3a4b00" disabled="true"><con:settings/><con:config service="https://api.temenos.com" resourcePath="/tables" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="getTables" id="529d1c7a-df9a-42f2-813e-d1d8c8594861" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ServiceEndpoint}</con:endpoint><con:request/><con:originalUri>https://api.temenos.com/api/v1.0.0/meta/tables</con:originalUri><con:assertion type="Simple Contains" id="862a6c8d-c5cf-4926-ae2a-2adc7b515c52" name="Contains"><con:configuration><token>tableId</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="apikey" value="${#Project#apikey}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>apikey</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="findValidParam" id="858a599c-c69a-425d-b9dc-a5818dbe4684" disabled="true"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+/*
+customerResponseContent = testRunner.testCase.getTestStepByName("getCustomers").getPropertyValue("response")
+
+custonerJsonParser = new JsonSlurper().parseText(customerResponseContent)
+
+def customerId=custonerJsonParser.body[0].tableId
+
+def tstep = testRunner.testCase.getTestStepByName("getAccounts")
+
+for (int i=0; i&lt;custonerJsonParser.body.size(); i++){
+
+	customerId=custonerJsonParser.body[i].customerId
+	
+	context.testCase.setPropertyValue("customerId", customerId)
+	
+	tstep.run(testRunner, context)
+
+	header = testRunner.testCase.testSteps['getAccounts'].testRequest.response.getResponseHeaders()
+
+	if (header["#status#"] == ['HTTP/1.1 404 Not Found']){
+		continue
+	}
+	*/
+	responseContent = testRunner.testCase.getTestStepByName("getTables").getPropertyValue("response")
+	
+	jsonParser = new JsonSlurper().parseText(responseContent)
+	
+	def tableId=jsonParser.body[0].tableId
+	
+	def tableIds=""
+
+	for (int j=0; j&lt;jsonParser.body.size(); j++){
+
+		tableId=jsonParser.body[j].tableId
+		
+		def tsteps = testRunner.testCase.getTestStepByName("getVirtualTableByName")
+		
+		context.testCase.setPropertyValue("tableId", tableId)
+		
+		
+		def status = tsteps.run(testRunner, context)
+		
+		header = testRunner.testCase.testSteps['getVirtualTableByName'].testRequest.response.getResponseHeaders()
+		
+		
+		if (header["#status#"] == ['HTTP/1.1 200 OK']){
+		
+			if (tableIds.length() == 0){
+				
+				tableIds = tableId
+			}
+			else
+		
+			tableIds = tableIds + ","+ tableId
+		
+		}
+		
+		
+		sleep (100)
+		
+		}
+
+
+	if (tableIds.length() >0) {
+		
+		log.info (tableIds)
+		
+		i = custonerJsonParser.body.size()
+	}
+
+//}
+</script></con:config></con:testStep><con:properties><con:property><con:name>tableId</con:name><con:value>AA.ARR.CUSTOMER</con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>apikey</con:name><con:value>Hlms6tJB7Lens0jDQu1IHsAV1aY8R8k8</con:value></con:property><con:property><con:name>ServiceEndpoint</con:name><con:value>api.temenos.com/api/v1.0.0/meta</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
